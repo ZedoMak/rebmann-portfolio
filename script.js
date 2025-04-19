@@ -1,4 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const transition = document.createElement('div');
+    transition.classList.add('page-transition');
+    document.body.appendChild(transition);
+    
+    setTimeout(() => {
+      transition.style.transform = 'scaleY(0)';
+    }, 100);
+  });
+
+document.addEventListener('DOMContentLoaded', () => {
     // Theme Toggle
     const themeToggle = document.querySelector('.theme-toggle');
     if (themeToggle) {
@@ -81,4 +91,19 @@ document.addEventListener('DOMContentLoaded', () => {
         hero.appendChild(particle);
       }
     }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const transition = document.querySelector('.page-transition');
+          transition.style.transform = 'scaleY(1)';
+          
+          setTimeout(() => {
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+              behavior: 'smooth'
+            });
+            transition.style.transform = 'scaleY(0)';
+          }, 600);
+        });
+      });
   });
