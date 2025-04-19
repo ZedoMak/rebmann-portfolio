@@ -4,17 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rebmann | Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
-    <!-- Preload critical resources -->
-    <link rel="preload" href="styles.css" as="style">
-    <link rel="preload" href="script.js" as="script">
-    
-    <!-- Add lazy loading for non-critical images -->
-    <img src="placeholder.jpg" data-src="project-image.jpg" alt="Project" loading="lazy" class="project-image">
+  <link rel="preload" href="./styles.css" as="style">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
-  <!-- Dark/Light Mode Toggle -->
+  <!-- Loading Screen -->
+  <div class="loader">
+    <div class="loader-spinner"></div>
+  </div>
+
+  <!-- Theme Toggle -->
   <button class="theme-toggle">
     <span class="toggle-icon">🌓</span>
   </button>
@@ -65,7 +66,7 @@
     <div class="projects-grid">
       <div class="project-card">
         <div class="project-image">
-          <img src="https://via.placeholder.com/600x400" alt="Project 1">
+          <img src="https://via.placeholder.com/600x400" alt="Project 1" loading="lazy">
         </div>
         <div class="project-info">
           <h3>Project 1</h3>
@@ -76,7 +77,11 @@
           </div>
         </div>
       </div>
-       <div class="project-info">
+      <div class="project-card">
+        <div class="project-image">
+          <img src="https://via.placeholder.com/600x400" alt="Project 2" loading="lazy">
+        </div>
+        <div class="project-info">
           <h3>Project 2</h3>
           <p>Finance Tracker</p>
           <div class="project-tags">
@@ -88,7 +93,7 @@
       </div>
       <div class="project-card">
         <div class="project-image">
-          <img src="https://via.placeholder.com/600x400" alt="Project 1">
+          <img src="https://via.placeholder.com/600x400" alt="Project 3" loading="lazy">
         </div>
         <div class="project-info">
           <h3>Project 3</h3>
@@ -100,20 +105,6 @@
           </div>
         </div>
       </div>
-      <div class="project-card">
-        <div class="project-image">
-          <img src="https://via.placeholder.com/600x400" alt="Project 1">
-        </div>
-        <div class="project-info">
-          <h3>Project 4</h3>
-          <p>E-Commerce Web</p>
-          <div class="project-tags">
-            <span>HTML/CSS</span>
-            <span>JavaScript</span>
-            <span>Node.Js</span>
-            <span>Vue.Js</span>
-          </div>
-      <!-- Add more project cards as needed -->
     </div>
   </section>
 
@@ -131,9 +122,6 @@
     </div>
   </section>
 
-  <!-- Preload hero content -->
-<link rel="preload" href="assets/images/hero-bg.jpg" as="image" media="(min-width: 768px)">
-
-  <script src="script.js"></script>
+  <script src="./script.js" defer></script>
 </body>
 </html>
