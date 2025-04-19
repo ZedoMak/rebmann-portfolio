@@ -6,11 +6,23 @@
   <title>Rebmann | Portfolio</title>
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Preload critical resources -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    
+    <!-- Add lazy loading for non-critical images -->
+    <img src="placeholder.jpg" data-src="project-image.jpg" alt="Project" loading="lazy" class="project-image">
 </head>
 <body>
+  <!-- Dark/Light Mode Toggle -->
+  <button class="theme-toggle">
+    <span class="toggle-icon">🌓</span>
+  </button>
+
   <!-- Navigation -->
   <nav class="navbar">
     <div class="logo">REBMANN</div>
+    <button class="mobile-menu-btn">☰</button>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#work">Work</a></li>
@@ -36,7 +48,7 @@
     <h2 class="section-title">About Me</h2>
     <div class="about-content">
       <p class="about-text">
-        I’m a multidisciplinary designer and developer with a passion for creating interactive, artistic digital experiences. 
+        I'm a multidisciplinary designer and developer with a passion for creating interactive, artistic digital experiences. 
         My work blends code and design to build unique visuals.
       </p>
       <div class="skills">
@@ -48,7 +60,7 @@
   </section>
 
   <!-- Work Section -->
-<section id="work" class="work">
+  <section id="work" class="work">
     <h2 class="section-title">My Work</h2>
     <div class="projects-grid">
       <div class="project-card">
@@ -64,11 +76,7 @@
           </div>
         </div>
       </div>
-      <div class="project-card">
-        <div class="project-image">
-          <img src="https://via.placeholder.com/600x400" alt="Project 1">
-        </div>
-        <div class="project-info">
+       <div class="project-info">
           <h3>Project 2</h3>
           <p>Finance Tracker</p>
           <div class="project-tags">
@@ -105,14 +113,12 @@
             <span>Node.Js</span>
             <span>Vue.Js</span>
           </div>
-        </div>
-      </div>
       <!-- Add more project cards as needed -->
     </div>
   </section>
 
   <!-- Contact Section -->
-<section id="contact" class="contact">
+  <section id="contact" class="contact">
     <h2 class="section-title">Get In Touch</h2>
     <div class="contact-content">
       <p>Have a project in mind or want to collaborate?</p>
@@ -124,6 +130,9 @@
       </div>
     </div>
   </section>
+
+  <!-- Preload hero content -->
+<link rel="preload" href="assets/images/hero-bg.jpg" as="image" media="(min-width: 768px)">
 
   <script src="script.js"></script>
 </body>
